@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: awesome-cats-frontend
+spec:
+
+  replicas: 2
+  selector:
+    matchLabels:
+      app: awesome-cats-frontend
+  template:
+    metadata:
+      labels:
+        app: awesome-cats-frontend
+    spec:
+      containers:
+        - name: awesome-cats-frontend
+          image: gcr.io/final-ayimdar/awesome-cats-frontend:latest
+          ports:
+            - containerPort: 80
+
